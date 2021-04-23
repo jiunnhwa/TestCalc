@@ -25,7 +25,7 @@ func TestCalculator(t *testing.T) {
 			g.Assert(Divide(10, 2)).Equal(float64(5))
 		})
 		
-		g.It("should divide negative numbers", func() {
+		g.It("should divide negative numbers", func() {  //New Test.
 			g.Assert(Divide(4, -2)).Equal(float64(-2))
 		})		
 	})
