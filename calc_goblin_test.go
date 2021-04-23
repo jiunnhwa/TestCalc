@@ -14,7 +14,7 @@ func TestCalculator(t *testing.T) {
 		})
 
 		g.It("should subtract two numbers", func() {
-			g.Assert(Subtract(5, 3)).Equal(2)
+			g.Assert(Subtract(5, 3)).Equal(3) //set fail case
 		})
 
 		g.It("should multiply two numbers", func() {
