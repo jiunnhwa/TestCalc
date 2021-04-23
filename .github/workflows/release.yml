@@ -1,0 +1,24 @@
+name: Releaaser
+
+on:
+  create:
+    tags:
+      - v*
+      
+jobs:
+  release:
+     name: Release on Github
+     uses: actions/checkout@v2
+     
+     name: Validate Go Releaser configuration
+     uses: docker://goreleaser/goreleaser:latest
+     with:
+        arg: check
+
+     name: Create Releas on Github
+     uses: docker://goreleaser/goreleaser:latest
+     with:
+        arg: release
+      env: 
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        
